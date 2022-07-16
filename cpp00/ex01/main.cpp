@@ -7,7 +7,8 @@ void search(PhoneBook *pb)
 	std::string index;
 	(*pb).show_contact_list();
 	std::cout << "Search index: ";
-	while (std::getline(std::cin, index) && (index.length() != 1 || !(index[0] - '0' >= 1 && index[0] - '0' <= MAX_CONTACT)))
+	std::getline(std::cin, index);
+	while (!std::cin.eof() && ((index.length() != 1 || !(index[0] - '0' >= 1 && index[0] - '0' <= MAX_CONTACT))))
 	{
 		std::cout << "Invalid index\nSearch index: ";
 		std::getline(std::cin, index);
@@ -40,6 +41,6 @@ int main()
 		{
 			std::cout << "Not found CMD" << std::endl;
 		}
-		std::cout << "CMD: ";
+		std::cout << "\nCMD: ";
 	}
 }

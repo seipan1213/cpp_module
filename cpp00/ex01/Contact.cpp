@@ -12,14 +12,39 @@ void Contact::set_contact()
 {
 	std::cout << "first name: ";
 	std::getline(std::cin, this->first_name);
+	while (!std::cin.eof() && this->first_name.empty())
+	{
+		std::cout << "Invalid value\n\nfirst name: ";
+		std::getline(std::cin, this->first_name);
+	}
 	std::cout << "last name: ";
 	std::getline(std::cin, this->last_name);
+	while (!std::cin.eof() && this->last_name.empty())
+	{
+		std::cout << "Invalid value\n\nlast name: ";
+		std::getline(std::cin, this->last_name);
+	}
 	std::cout << "nick name: ";
 	std::getline(std::cin, this->nick_name);
+	while (!std::cin.eof() && this->nick_name.empty())
+	{
+		std::cout << "Invalid value\n\nnick name: ";
+		std::getline(std::cin, this->nick_name);
+	}
 	std::cout << "phone number: ";
 	std::getline(std::cin, this->phone_number);
+	while (!std::cin.eof() && this->phone_number.empty())
+	{
+		std::cout << "Invalid value\n\nphone number: ";
+		std::getline(std::cin, this->phone_number);
+	}
 	std::cout << "darkest secret: ";
 	std::getline(std::cin, this->darkest_secret);
+	while (!std::cin.eof() && this->darkest_secret.empty())
+	{
+		std::cout << "Invalid value\n\ndarkest secret: ";
+		std::getline(std::cin, this->darkest_secret);
+	}
 }
 
 void Contact::show_contact()

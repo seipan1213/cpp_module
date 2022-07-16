@@ -28,6 +28,7 @@ void PhoneBook::show_contact_list()
 
 void PhoneBook::show_contact_detail(int i)
 {
-	std::cout << "index: " << i << std::endl;
+	std::cout << std::endl
+			  << "index: " << i << std::endl;
 	this->contacts[i - 1].show_contact_detail();
 }
