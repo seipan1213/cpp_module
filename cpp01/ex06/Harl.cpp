@@ -64,29 +64,10 @@ void Harl::complain(std::string level)
 			break;
 		filter_level++;
 	}
-	switch (filter_level)
-	{
-	case 0:
-		(this->*fpFunc[0])();
-		(this->*fpFunc[1])();
-		(this->*fpFunc[2])();
-		(this->*fpFunc[3])();
-		break;
-	case 1:
-		(this->*fpFunc[1])();
-		(this->*fpFunc[2])();
-		(this->*fpFunc[3])();
-		break;
-	case 2:
-		(this->*fpFunc[2])();
-		(this->*fpFunc[3])();
-		break;
-	case 3:
-		(this->*fpFunc[3])();
-		break;
-	default:
+
+	if (filter_level == 4)
 		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		break;
-	}
-	return;
+
+	for (int i = filter_level; i < 4; i++)
+		(this->*fpFunc[i])();
 }
