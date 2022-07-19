@@ -7,7 +7,7 @@ void replace(std::ifstream &input, std::ofstream &output, std::string s1, std::s
 
 	while (std::getline(input, str, '\n'))
 	{
-		for (int i = 0; i < (int)str.length(); i++)
+		for (size_t i = 0; i < str.length(); i++)
 		{
 			if (!str.compare(i, s1.length(), s1))
 			{
