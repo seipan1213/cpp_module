@@ -56,7 +56,7 @@ float Fixed::toFloat() const
 	return static_cast<float>(raw_bits) / (1 << fraction_bits);
 }
 
-std::ostream &operator<<(std::ostream &os, Fixed const &fixed)
+std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 {
 	os << fixed.toFloat();
 	return os;
