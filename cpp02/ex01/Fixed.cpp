@@ -10,13 +10,13 @@ Fixed::Fixed() : raw_bits(0)
 Fixed::Fixed(const int n)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->raw_bits = n << this->fraction_bits;
+	this->raw_bits = n << fraction_bits;
 }
 
 Fixed::Fixed(const float n)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->raw_bits = roundf(n * (1 << this->fraction_bits));
+	this->raw_bits = roundf(n * (1 << fraction_bits));
 }
 
 Fixed::~Fixed()
