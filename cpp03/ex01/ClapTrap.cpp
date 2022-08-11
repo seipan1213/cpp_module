@@ -13,18 +13,17 @@ ClapTrap::ClapTrap(std::string name)
 	std::cout << "--constructor ClapTrap " + this->name + "--" << std::endl;
 }
 
+ClapTrap::~ClapTrap()
+{
+	std::cout << "--destructor ClapTrap " + this->name + "--" << std::endl;
+}
+
 ClapTrap::ClapTrap(ClapTrap const &other)
 {
 	this->name = other.name;
 	this->hit_point = other.hit_point;
 	this->energy_point = other.energy_point;
 	this->attack_damage = other.attack_damage;
-	std::cout << "--constructor ScavTrap " + this->name + "--" << std::endl;
-}
-
-ClapTrap::~ClapTrap()
-{
-	std::cout << "--destructor ClapTrap " + this->name + "--" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &other)
