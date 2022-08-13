@@ -8,13 +8,14 @@ class PhoneBook
 {
 private:
 	int con_index;
+	Contact contacts[MAX_CONTACT];
+	int registered_num;
 
 public:
-	Contact contacts[MAX_CONTACT];
-
 	PhoneBook(void);
 	~PhoneBook(void);
 	void add_contact();
+	void search_contact();
 	void show_contact_list();
 	void show_contact_detail(int i);
 };
