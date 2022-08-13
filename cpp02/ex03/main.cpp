@@ -5,14 +5,32 @@
 
 int main(void)
 {
-	Point a(Fixed(3), Fixed(3));
-	Point b(Fixed(3), Fixed(3));
-	Point c(Fixed(3), Fixed(3));
+	/**
+	 * Point a(Fixed(0), Fixed(0));
+	 * Point b(Fixed(0), Fixed(0));
+	 * Point c(Fixed(0), Fixed(0));
+	 * Point point(Fixed(0), Fixed(0));
+	 */
 
-	Point point(Fixed(3), Fixed(3));
+	/**
+	 * Point a(Fixed(0), Fixed(0));
+	 * Point b(Fixed(0), Fixed(1));
+	 * Point c(Fixed(1), Fixed(0));
+	 * Point point(Fixed(1), Fixed(0));
+	 */
 
-	if (bsp(a, b, c, point) == true)
-		std::cout << "In" << std::endl;
-	else
-		std::cout << "Out" << std::endl;
+	/**
+	 * Point a(Fixed(0), Fixed(0));
+	 * Point b(Fixed(0), Fixed(2));
+	 * Point c(Fixed(2), Fixed(0));
+	 * Point point(Fixed(1), Fixed(0));
+	 */
+
+	Point a(Fixed(0), Fixed(0));
+	Point b(Fixed(0), Fixed(2));
+	Point c(Fixed(2), Fixed(0));
+
+	Point point(Fixed(0), Fixed(0));
+
+	std::cout << (bsp(a, b, c, point) ? "IN" : "OUT") << std::endl;
 }

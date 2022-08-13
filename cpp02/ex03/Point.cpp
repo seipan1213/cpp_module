@@ -1,9 +1,7 @@
 #include "Point.hpp"
 
-Point::Point()
+Point::Point() : x(0), y(0)
 {
-	this->x = 0;
-	this->y = 0;
 }
 
 Point::Point(const Fixed x, const Fixed y) : x(x), y(y)
@@ -24,8 +22,8 @@ Point &Point::operator=(const Point &other)
 {
 	if (this != &other)
 	{
-		this->x = other.x;
-		this->y = other.y;
+		(Fixed) this->x = other.x;
+		(Fixed) this->y = other.y;
 	}
 	return *this;
 }
@@ -42,16 +40,16 @@ float Point::getY(void)
 
 float sign(Point p1, Point p2, Point p3)
 {
-	return (p1.getX() - p3.getX()) * (p2.getY() - p3.getY()) - (p2.getX() - p3.getX()) * (p1.getY() - p3.getY());
+	return (p3.getX() - p2.getX()) * (p1.getY() - p3.getY()) - (p3.getY() - p2.getY()) * (p1.getX() - p3.getX());
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
-	bool b1, b2, b3;
+	float f1, f2, f3;
 
-	b1 = sign(point, a, b) < 0.0f;
-	b2 = sign(point, b, c) < 0.0f;
-	b3 = sign(point, c, a) < 0.0f;
+	f1 = sign(point, a, b);
+	f2 = sign(point, b, c);
+	f3 = sign(point, c, a);
 
-	return ((b1 == b2) && (b2 == b3));
+	return ((f1 > 0 && f2 > 0 && f3 > 0) || (f1 < 0 && f2 < 0 && f3 < 0));
 }
