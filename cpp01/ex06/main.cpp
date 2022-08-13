@@ -4,7 +4,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 2)
 	{
-		std::cout << "Error: ARGS" << std::endl;
+		std::cerr << "Error: ARGS" << std::endl;
 		return (0);
 	}
 

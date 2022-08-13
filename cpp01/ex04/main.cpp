@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		std::cout << "Error: ARGS" << std::endl;
+		std::cerr << "Error: ARGS" << std::endl;
 		return (0);
 	}
 
@@ -35,14 +35,14 @@ int main(int argc, char **argv)
 
 	if (s1.empty())
 	{
-		std::cout << "Error: Invalid Value s1" << std::endl;
+		std::cerr << "Error: Invalid Value s1" << std::endl;
 		return (0);
 	}
 
 	std::ifstream input(in_file_name.c_str());
 	if (!input)
 	{
-		std::cout << "Error: file not found" << std::endl;
+		std::cerr << "Error: file not found" << std::endl;
 		return (0);
 	}
 
@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 	if (!output)
 	{
 		input.close();
-		std::cout << "Error: cant output" << std::endl;
+		std::cerr << "Error: cant output" << std::endl;
 		return (0);
 	}
 
