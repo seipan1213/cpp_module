@@ -65,9 +65,6 @@ void Harl::complain(std::string level)
 		filter_level++;
 	}
 
-	if (filter_level == 4)
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-
 	switch (filter_level)
 	{
 	case 0:
@@ -88,5 +85,7 @@ void Harl::complain(std::string level)
 	case 3:
 		(this->*fpFunc[3])();
 		break;
+	case 4:
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }
