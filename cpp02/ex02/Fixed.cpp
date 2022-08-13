@@ -36,7 +36,7 @@ int Fixed::getRawBits() const
 	return (raw_bits);
 }
 
-void Fixed::setRawBits(int raw)
+void Fixed::setRawBits(const int raw)
 {
 	this->raw_bits = raw;
 }

@@ -46,6 +46,11 @@ int Fixed::getRawBits() const
 	return (raw_bits);
 }
 
+void Fixed::setRawBits(const int raw)
+{
+	this->raw_bits = raw;
+}
+
 int Fixed::toInt() const
 {
 	return raw_bits >> fraction_bits;
