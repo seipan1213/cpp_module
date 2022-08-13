@@ -87,5 +87,6 @@ void Harl::complain(std::string level)
 		break;
 	case 4:
 		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		break;
 	}
 }
