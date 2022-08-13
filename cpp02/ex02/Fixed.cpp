@@ -116,7 +116,7 @@ Fixed Fixed::operator/(const Fixed &other)
 {
 	if (other.getRawBits() == 0)
 	{
-		std::cout << "ERR: Division by zero" << std::endl;
+		std::cerr << "ERR: Division by zero" << std::endl;
 		return (*this);
 	}
 	Fixed res;
