@@ -4,7 +4,7 @@
 ClapTrap::ClapTrap()
 	: name("unknown"), hit_point(10), energy_point(10), attack_damage(0)
 {
-	std::cout << "--constructor ClapTrap " + this->name + "--" << std::endl;
+	std::cout << "--default constructor ClapTrap " + this->name + "--" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap(ClapTrap const &other)
 	this->hit_point = other.hit_point;
 	this->energy_point = other.energy_point;
 	this->attack_damage = other.attack_damage;
-	std::cout << "--constructor ScavTrap " + this->name + "--" << std::endl;
+	std::cout << "--copy constructor ClapTrap " + this->name + "--" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -36,6 +36,7 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &other)
 		this->energy_point = other.energy_point;
 		this->attack_damage = other.attack_damage;
 	}
+	std::cout << "ClapTrap orerator= " + this->name << std::endl;
 
 	return *this;
 }

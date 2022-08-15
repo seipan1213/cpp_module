@@ -8,7 +8,7 @@ DiamondTrap::DiamondTrap()
 	this->hit_point = FragTrap::hit_point;
 	this->energy_point = ScavTrap::energy_point;
 	this->attack_damage = FragTrap::attack_damage;
-	std::cout << "--constructor DiamondTrap " + this->name + "--" << std::endl;
+	std::cout << "--default constructor DiamondTrap " + this->name + "--" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name)
@@ -23,7 +23,7 @@ DiamondTrap::DiamondTrap(std::string name)
 
 DiamondTrap::DiamondTrap(DiamondTrap const &other) : ClapTrap(other), ScavTrap(other), FragTrap(other)
 {
-	std::cout << "--constructor DiamondTrap " + this->name + "--" << std::endl;
+	std::cout << "--copy constructor DiamondTrap " + this->name + "--" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()

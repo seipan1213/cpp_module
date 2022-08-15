@@ -6,7 +6,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 	this->hit_point = 100;
 	this->energy_point = 50;
 	this->attack_damage = 20;
-	std::cout << "--constructor ScavTrap " + this->name + "--" << std::endl;
+	std::cout << "--default constructor ScavTrap " + this->name + "--" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -19,7 +19,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(ScavTrap const &other) : ClapTrap(other)
 {
-	std::cout << "--constructor ScavTrap " + this->name + "--" << std::endl;
+	std::cout << "--copy constructor ScavTrap " + this->name + "--" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
