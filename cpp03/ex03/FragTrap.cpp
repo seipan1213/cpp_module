@@ -17,9 +17,10 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	std::cout << "--constructor FragTrap " + this->name + "--" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const &other) : ClapTrap(other)
+FragTrap::FragTrap(FragTrap const &other)
 {
 	std::cout << "--copy constructor FragTrap " + this->name + "--" << std::endl;
+	*this = other;
 }
 
 FragTrap::~FragTrap()
