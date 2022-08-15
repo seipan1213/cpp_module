@@ -1,4 +1,5 @@
 #include "ScavTrap.hpp"
+#include <iostream>
 
 int main()
 {
@@ -17,4 +18,11 @@ int main()
 
 	clapTrap.beRepaired(5);
 	scavTrap.beRepaired(7);
+
+	std::cout << std::endl;
+
+	ScavTrap *hogeee = new ScavTrap;
+	delete hogeee;
+
+	std::cout << std::endl;
 }
