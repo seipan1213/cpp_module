@@ -22,8 +22,8 @@ Point &Point::operator=(const Point &other)
 {
 	if (this != &other)
 	{
-		(Fixed) this->x = other.x;
-		(Fixed) this->y = other.y;
+		const_cast<Fixed &>(this->x) = other.x;
+		const_cast<Fixed &>(this->y) = other.y;
 	}
 	return *this;
 }
