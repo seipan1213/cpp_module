@@ -13,7 +13,7 @@ public:
 	~Cure();
 	Cure &operator=(const Cure &other);
 
-	Cure *clone();
+	Cure *clone() const;
 	void use(ICharacter &target);
 };
 #endif
