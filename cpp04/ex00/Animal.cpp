@@ -16,11 +16,13 @@ Animal::Animal(std::string type) : type(type)
 
 Animal::Animal(const Animal &other)
 {
+	std::cout << "[" + this->type + "] Animal copy constructor" << std::endl;
 	*this = other;
 }
 
 Animal &Animal::operator=(const Animal &other)
 {
+	std::cout << "[" + this->type + "] Animal operator=" << std::endl;
 	if (this != &other)
 	{
 		this->type = other.type;

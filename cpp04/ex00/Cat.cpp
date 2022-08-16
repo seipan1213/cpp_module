@@ -11,6 +11,7 @@ Cat::Cat() : Animal(k_init_type)
 
 Cat::Cat(const Cat &other) : Animal(other)
 {
+	std::cout << "[" + this->type + "] Cat copy constructor" << std::endl;
 	*this = other;
 }
 
@@ -21,6 +22,7 @@ Cat::~Cat()
 
 Cat &Cat::operator=(const Cat &other)
 {
+	std::cout << "[" + this->type + "] Cat operator=" << std::endl;
 	if (this != &other)
 	{
 		this->type = other.type;

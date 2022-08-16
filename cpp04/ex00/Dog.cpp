@@ -11,6 +11,7 @@ Dog::Dog() : Animal(k_init_type)
 
 Dog::Dog(const Dog &other) : Animal(other)
 {
+	std::cout << "[" + this->type + "] Dog copy constructor" << std::endl;
 	*this = other;
 }
 
@@ -21,6 +22,7 @@ Dog::~Dog()
 
 Dog &Dog::operator=(const Dog &other)
 {
+	std::cout << "[" + this->type + "] Dog operator=" << std::endl;
 	if (this != &other)
 	{
 		this->type = other.type;
