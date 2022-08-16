@@ -9,7 +9,7 @@ Dog::Dog() : Animal(k_init_type)
 	std::cout << "[" + this->type + "] Dog constructor" << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(other)
+Dog::Dog(const Dog &other) : Animal()
 {
 	std::cout << "[" + this->type + "] Dog copy constructor" << std::endl;
 	*this = other;

@@ -9,7 +9,7 @@ Cat::Cat() : Animal(k_init_type)
 	std::cout << "[" + this->type + "] Cat constructor" << std::endl;
 }
 
-Cat::Cat(const Cat &other) : Animal(other)
+Cat::Cat(const Cat &other) : Animal()
 {
 	std::cout << "[" + this->type + "] Cat copy constructor" << std::endl;
 	*this = other;
