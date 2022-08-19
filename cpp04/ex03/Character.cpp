@@ -3,10 +3,18 @@
 
 Character::Character() : name("unknown")
 {
+	for (size_t i = 0; i < Character::k_max_materia; i++)
+	{
+		this->materias[i] = NULL;
+	}
 }
 
 Character::Character(std::string name) : name(name)
 {
+	for (size_t i = 0; i < Character::k_max_materia; i++)
+	{
+		this->materias[i] = NULL;
+	}
 }
 
 Character::Character(const Character &other)
@@ -16,6 +24,11 @@ Character::Character(const Character &other)
 
 Character::~Character()
 {
+	for (size_t i = 0; i < Character::k_max_materia; i++)
+	{
+		if (this->materias[i])
+			delete this->materias[i];
+	}
 }
 
 Character &Character::operator=(const Character &other)
@@ -34,12 +47,28 @@ std::string const &Character::getName() const
 
 void Character::equip(AMateria *m)
 {
+	if (!m)
+		return;
+	for (size_t i = 0; i < Character::k_max_materia; i++)
+	{
+		if (!this->materias[i])
+		{
+			this->materias[i] = m;
+			return;
+		}
+	}
 }
 
 void Character::unequip(int idx)
 {
+	if (idx < 0 || idx >= static_cast<int>(Character::k_max_materia))
+		return;
+	this->materias[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter &target)
 {
+	if (idx < 0 || idx >= static_cast<int>(Character::k_max_materia) || !this->materias[idx])
+		return;
+	this->materias[idx]->use(target);
 }

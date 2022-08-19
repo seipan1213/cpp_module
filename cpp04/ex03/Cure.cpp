@@ -1,11 +1,12 @@
 #include "Cure.hpp"
 #include <string>
+#include <iostream>
 
-Cure::Cure() : AMateria(type)
+Cure::Cure() : AMateria("cure")
 {
 }
 
-Cure::Cure(const Cure &other)
+Cure::Cure(const Cure &other) : AMateria()
 {
 	*this = other;
 }
@@ -31,4 +32,5 @@ Cure *Cure::clone() const
 
 void Cure::use(ICharacter &target)
 {
+	std::cout << "* heals " + target.getName() + "'s wounds *" << std::endl;
 }

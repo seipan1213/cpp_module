@@ -12,7 +12,7 @@ private:
 public:
 	Brain();
 	Brain(const Brain &other);
-	~Brain();
+	virtual ~Brain();
 	Brain &operator=(const Brain &other);
 
 	void showIdeas() const;

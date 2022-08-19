@@ -11,7 +11,7 @@ public:
 	Ice();
 	Ice(const Ice &other);
 	Ice(std::string const &type);
-	~Ice();
+	virtual ~Ice();
 	Ice &operator=(const Ice &other);
 
 	Ice *clone() const;

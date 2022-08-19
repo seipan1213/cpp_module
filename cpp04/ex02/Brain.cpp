@@ -3,7 +3,7 @@
 
 Brain::Brain()
 {
-	for (int i = 0; i < Brain::k_idea_size; i++)
+	for (size_t i = 0; i < Brain::k_idea_size; i++)
 	{
 		ideas[i] = 'A' + (i % 26);
 	}
@@ -26,7 +26,7 @@ Brain &Brain::operator=(const Brain &other)
 	std::cout << "[" << this << "] Brain operator=" << std::endl;
 	if (this != &other)
 	{
-		for (int i = 0; i < k_idea_size; i++)
+		for (size_t i = 0; i < k_idea_size; i++)
 		{
 			ideas[i] = other.ideas[i];
 		}
@@ -38,7 +38,7 @@ Brain &Brain::operator=(const Brain &other)
 void Brain::showIdeas() const
 {
 	std::cout << "[" << this << "] showIdeas" << std::endl;
-	for (int i = 0; i < k_idea_size; i++)
+	for (size_t i = 0; i < k_idea_size; i++)
 	{
 		std::cout << this->ideas[i] << std::endl;
 	}

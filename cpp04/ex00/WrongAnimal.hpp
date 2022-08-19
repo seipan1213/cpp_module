@@ -14,7 +14,7 @@ protected:
 
 public:
 	WrongAnimal();
-	explicit WrongAnimal(std::string type);
+	WrongAnimal(std::string type);
 	WrongAnimal(const WrongAnimal &other);
 	WrongAnimal &operator=(const WrongAnimal &other);
 	virtual ~WrongAnimal();
