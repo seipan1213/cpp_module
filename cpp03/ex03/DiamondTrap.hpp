@@ -14,7 +14,7 @@ public:
 	DiamondTrap();
 	DiamondTrap(std::string name);
 	DiamondTrap(DiamondTrap const &other);
-	~DiamondTrap();
+	virtual ~DiamondTrap();
 	DiamondTrap &operator=(DiamondTrap const &other);
 
 	void attack(std::string const &target);

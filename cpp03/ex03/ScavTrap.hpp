@@ -10,7 +10,7 @@ public:
 	ScavTrap();
 	ScavTrap(std::string name);
 	ScavTrap(ScavTrap const &other);
-	~ScavTrap();
+	virtual ~ScavTrap();
 	ScavTrap &operator=(ScavTrap const &other);
 
 	void guardGate();
