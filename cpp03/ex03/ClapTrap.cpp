@@ -13,15 +13,15 @@ ClapTrap::ClapTrap(std::string name)
 	std::cout << "--constructor ClapTrap " + this->name + "--" << std::endl;
 }
 
-ClapTrap::~ClapTrap()
-{
-	std::cout << "--destructor ClapTrap " + this->name + "--" << std::endl;
-}
-
 ClapTrap::ClapTrap(ClapTrap const &other)
 {
 	std::cout << "--copy constructor ClapTrap " + this->name + "--" << std::endl;
 	*this = other;
+}
+
+ClapTrap::~ClapTrap()
+{
+	std::cout << "--destructor ClapTrap " + this->name + "--" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &other)
@@ -51,7 +51,6 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (!this->isAlive() || !this->hasEnergy())
 		return;
 	this->hit_point -= amount;
-	this->energy_point--;
 	std::cout << "ClapTrap " << this->name << " takeDamege " << amount << std::endl;
 }
 

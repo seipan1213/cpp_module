@@ -51,7 +51,6 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (!this->isAlive() || !this->hasEnergy())
 		return;
 	this->hit_point -= amount;
-	this->energy_point--;
 	std::cout << "ClapTrap " << this->name << " takeDamege " << amount << std::endl;
 }
 
