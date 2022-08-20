@@ -20,6 +20,8 @@ int main()
 
 	scavTrap.guardGate();
 	fragTrap.highFivesGuys();
+	diamondTrap.guardGate();
+	diamondTrap.highFivesGuys();
 	diamondTrap.whoAmI();
 
 	clapTrap.beRepaired(5);

@@ -6,6 +6,11 @@
 
 class FragTrap : virtual public ClapTrap
 {
+protected:
+	static const long k_init_hp = 100;
+	static const long k_init_ep = 100;
+	static const long k_init_ad = 30;
+
 public:
 	FragTrap();
 	FragTrap(std::string name);

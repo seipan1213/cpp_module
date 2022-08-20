@@ -7,8 +7,12 @@
 
 class DiamondTrap : public ScavTrap, public FragTrap
 {
-protected:
+private:
 	std::string name;
+
+	static const long k_init_hp = FragTrap::k_init_hp;
+	static const long k_init_ep = ScavTrap::k_init_ep;
+	static const long k_init_ad = FragTrap::k_init_ad;
 
 public:
 	DiamondTrap();

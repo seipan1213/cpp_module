@@ -1,27 +1,25 @@
 #include "DiamondTrap.hpp"
 #include <iostream>
 
-DiamondTrap::DiamondTrap()
+DiamondTrap::DiamondTrap() : ClapTrap("unknown_clap_name")
 {
-	ClapTrap::name = "unknown_clap_name";
 	this->name = "unknown";
-	this->hit_point = FragTrap::hit_point;
-	this->energy_point = ScavTrap::energy_point;
-	this->attack_damage = FragTrap::attack_damage;
+	this->hit_point = k_init_hp;
+	this->energy_point = k_init_ep;
+	this->attack_damage = k_init_ad;
 	std::cout << "--default constructor DiamondTrap " + this->name + "--" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
 {
-	ClapTrap::name = name + "_clap_name";
 	this->name = name;
-	this->hit_point = FragTrap::hit_point;
-	this->energy_point = ScavTrap::energy_point;
-	this->attack_damage = FragTrap::attack_damage;
+	this->hit_point = k_init_hp;
+	this->energy_point = k_init_ep;
+	this->attack_damage = k_init_ad;
 	std::cout << "--constructor DiamondTrap " + this->name + "--" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const &other)
+DiamondTrap::DiamondTrap(DiamondTrap const &other) : ClapTrap(), ScavTrap(), FragTrap()
 {
 	std::cout << "--copy constructor DiamondTrap " + this->name + "--" << std::endl;
 	*this = other;

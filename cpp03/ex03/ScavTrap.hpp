@@ -6,6 +6,11 @@
 
 class ScavTrap : virtual public ClapTrap
 {
+protected:
+	static const long k_init_hp = 100;
+	static const long k_init_ep = 50;
+	static const long k_init_ad = 20;
+
 public:
 	ScavTrap();
 	ScavTrap(std::string name);

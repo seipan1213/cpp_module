@@ -2,13 +2,13 @@
 #include <iostream>
 
 ClapTrap::ClapTrap()
-	: name("unknown"), hit_point(10), energy_point(10), attack_damage(0)
+	: name("unknown"), hit_point(k_init_hp), energy_point(k_init_ep), attack_damage(k_init_ad)
 {
 	std::cout << "--default constructor ClapTrap " + this->name + "--" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
-	: name(name), hit_point(10), energy_point(10), attack_damage(0)
+	: name(name), hit_point(k_init_hp), energy_point(k_init_ep), attack_damage(k_init_ad)
 {
 	std::cout << "--constructor ClapTrap " + this->name + "--" << std::endl;
 }
