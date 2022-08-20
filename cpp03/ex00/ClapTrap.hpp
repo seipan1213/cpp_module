@@ -11,6 +11,10 @@ private:
 	long energy_point;
 	long attack_damage;
 
+	static const long k_init_hp = 10;
+	static const long k_init_ep = 10;
+	static const long k_init_ad = 0;
+
 public:
 	ClapTrap();
 	ClapTrap(std::string name);
