@@ -38,5 +38,10 @@ FragTrap &FragTrap::operator=(FragTrap const &other)
 
 void FragTrap::highFivesGuys(void)
 {
+	if (!this->isAlive() || !this->hasEnergy())
+	{
+		std::cout << "Failed: FragTrap " << this->name << " pls high fives " << std::endl;
+		return;
+	}
 	std::cout << "FragTrap " << this->name << " pls high fives " << std::endl;
 }

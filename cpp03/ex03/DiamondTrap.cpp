@@ -47,5 +47,10 @@ void DiamondTrap::attack(std::string const &target)
 
 void DiamondTrap::whoAmI()
 {
+	if (!this->isAlive() || !this->hasEnergy())
+	{
+		std::cout << "Failed: my DiamondName: " + this->name + " my ClapName: " + ClapTrap::name << std::endl;
+		return;
+	}
 	std::cout << "my DiamondName: " + this->name + " my ClapName: " + ClapTrap::name << std::endl;
 }
