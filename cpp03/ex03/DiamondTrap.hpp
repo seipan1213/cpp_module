@@ -23,6 +23,7 @@ public:
 
 	void attack(std::string const &target);
 	void whoAmI();
+	void showParam();
 };
 
 #endif

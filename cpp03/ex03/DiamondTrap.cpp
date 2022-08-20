@@ -52,3 +52,8 @@ void DiamondTrap::whoAmI()
 	}
 	std::cout << "my DiamondName: " + this->name + " my ClapName: " + ClapTrap::name << std::endl;
 }
+
+void DiamondTrap::showParam()
+{
+	std::cout << "hp: " << this->hit_point << " ep: " << this->energy_point << " ad: " << this->attack_damage << std::endl;
+}
