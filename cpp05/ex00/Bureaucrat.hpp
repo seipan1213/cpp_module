@@ -10,8 +10,8 @@ class Bureaucrat
 private:
 	std::string name;
 	int grade;
-	static const int k_min_grade = 1;
-	static const int k_max_grade = 150;
+	static const int k_max_grade = 1;
+	static const int k_min_grade = 150;
 
 public:
 	Bureaucrat();
@@ -28,6 +28,9 @@ public:
 	void increment(int i);
 	void guardGradeInRange();
 
+	const std::string &getName() const;
+	int getGrade() const;
+
 	class GradeTooHighException : public std::out_of_range
 	{
 	public:
@@ -39,5 +42,7 @@ public:
 		GradeTooLowException();
 	};
 };
+
+std::ostream &operator<<(std::ostream &ost, Bureaucrat const &bc);
 
 #endif
