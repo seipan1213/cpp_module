@@ -86,6 +86,19 @@ int Bureaucrat::getGrade() const
 	return this->grade;
 }
 
+void Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << *this << " signed " << form << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << *this << " couldn't sign " << form << " because " << e.what() << std::endl;
+	}
+}
+
 Bureaucrat::GradeTooHighException::GradeTooHighException() : std::out_of_range("Grade too high!!!")
 {
 }
