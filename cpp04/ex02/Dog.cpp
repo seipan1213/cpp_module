@@ -9,7 +9,7 @@ Dog::Dog() : Animal(k_init_type), brain(new Brain())
 	std::cout << "[" + this->type + "] Dog constructor" << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(), brain(NULL)
+Dog::Dog(const Dog &other) : Animal(), brain(new Brain())
 {
 	std::cout << "[" + this->type + "] Dog copy constructor" << std::endl;
 	*this = other;
@@ -27,14 +27,8 @@ Dog &Dog::operator=(const Dog &other)
 	if (this != &other)
 	{
 		this->type = other.type;
-
-		if (this->brain != NULL)
-			delete this->brain;
-
 		if (other.brain != NULL)
-			this->brain = new Brain(*other.brain);
-		else
-			this->brain = NULL;
+			*(this->brain) = *(other.brain);
 	}
 
 	return *this;
