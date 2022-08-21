@@ -17,8 +17,7 @@ MateriaSource::~MateriaSource()
 {
 	for (size_t i = 0; i < MateriaSource::k_max_materias; i++)
 	{
-		if (this->materias[i])
-			delete this->materias[i];
+		delete this->materias[i];
 	}
 }
 
@@ -56,9 +55,7 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 {
 	for (size_t i = 0; i < MateriaSource::k_max_materias; i++)
 	{
-		if (!this->materias[i])
-			continue;
-		if (type == this->materias[i]->getType())
+		if (this->materias[i] && type == this->materias[i]->getType())
 		{
 			return materias[i]->clone();
 		}

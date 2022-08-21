@@ -26,8 +26,7 @@ Character::~Character()
 {
 	for (size_t i = 0; i < Character::k_max_materia; i++)
 	{
-		if (this->materias[i])
-			delete this->materias[i];
+		delete this->materias[i];
 	}
 }
 
@@ -36,6 +35,14 @@ Character &Character::operator=(const Character &other)
 	if (this != &other)
 	{
 		this->name = other.getName();
+		for (size_t i = 0; i < Character::k_max_materia; i++)
+		{
+			delete this->materias[i];
+			if (other.materias)
+				this->materias[i] = other.materias[i]->clone();
+			else
+				this->materias[i] = NULL;
+		}
 	}
 	return *this;
 }
