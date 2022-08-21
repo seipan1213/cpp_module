@@ -27,7 +27,8 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 	{
 		for (size_t i = 0; i < MateriaSource::k_max_materias; i++)
 		{
-			if (other.materias)
+			delete this->materias[i];
+			if (other.materias[i])
 				this->materias[i] = other.materias[i]->clone();
 			else
 				this->materias[i] = NULL;

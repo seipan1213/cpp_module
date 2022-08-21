@@ -38,7 +38,7 @@ Character &Character::operator=(const Character &other)
 		for (size_t i = 0; i < Character::k_max_materia; i++)
 		{
 			delete this->materias[i];
-			if (other.materias)
+			if (other.materias[i])
 				this->materias[i] = other.materias[i]->clone();
 			else
 				this->materias[i] = NULL;
