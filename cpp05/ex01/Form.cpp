@@ -40,22 +40,22 @@ Form &Form::operator=(const Form &other)
 	return *this;
 }
 
-const std::string &Form::getName()
+const std::string &Form::getName() const
 {
 	return this->name;
 }
 
-bool Form::isSigned()
+bool Form::isSigned() const
 {
 	return this->is_signed;
 }
 
-int Form::getSignGrade()
+int Form::getSignGrade() const
 {
 	return this->sign_grade;
 }
 
-int Form::getExeGrade()
+int Form::getExeGrade() const
 {
 	return this->exe_grade;
 }
@@ -74,16 +74,14 @@ void Form::beSigned(const Bureaucrat &bc)
 	this->is_signed = true;
 }
 
-void Form::guardGradeInRange(int grade)
+void Form::guardGradeInRange(int grade) const
 {
 	if (grade < k_max_grade)
 	{
-		grade = k_max_grade;
 		throw GradeTooHighException("Grade too high!!!");
 	}
 	if (grade > k_min_grade)
 	{
-		grade = k_min_grade;
 		throw GradeTooLowException("Grade too low!!!");
 	}
 }
@@ -96,7 +94,7 @@ Form::GradeTooLowException::GradeTooLowException(const std::string msg) : std::o
 {
 }
 
-std::ostream &operator<<(std::ostream &os, Form &form)
+std::ostream &operator<<(std::ostream &os, const Form &form)
 {
 	os << "Form:[ name: " + form.getName() + " sign_grade: " << form.getSignGrade()
 	   << " exe_grade: " << form.getExeGrade() + " is_signed: " << form.getSignGrade() << " ]";

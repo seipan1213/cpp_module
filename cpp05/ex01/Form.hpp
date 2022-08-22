@@ -27,14 +27,15 @@ public:
 	~Form();
 	Form &operator=(const Form &other);
 
-	const std::string &getName();
-	bool isSigned();
-	int getSignGrade();
-	int getExeGrade();
+	const std::string &getName() const;
+	bool isSigned() const;
+	int getSignGrade() const;
+	int getExeGrade() const;
+	const std::string &getTarget() const;
 
 	void beSigned(const Bureaucrat &bc);
 
-	void guardGradeInRange(int grade);
+	void guardGradeInRange(int grade) const;
 
 	class GradeTooHighException : public std::out_of_range
 	{
@@ -48,6 +49,6 @@ public:
 	};
 };
 
-std::ostream &operator<<(std::ostream &os, Form &form);
+std::ostream &operator<<(std::ostream &os, const Form &form);
 
 #endif

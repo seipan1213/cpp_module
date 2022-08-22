@@ -9,7 +9,7 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::Bureaucrat(std::string name, int grade)
 	: name(name), grade(grade)
 {
-	guardGradeInRange();
+	guardGradeInRange(grade);
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
@@ -58,20 +58,18 @@ Bureaucrat Bureaucrat::operator--(int)
 
 void Bureaucrat::increment(int i)
 {
+	guardGradeInRange(this->grade + i);
 	this->grade += i;
-	guardGradeInRange();
 }
 
-void Bureaucrat::guardGradeInRange()
+void Bureaucrat::guardGradeInRange(int grade)
 {
 	if (grade < k_max_grade)
 	{
-		grade = k_max_grade;
 		throw GradeTooHighException();
 	}
 	if (grade > k_min_grade)
 	{
-		grade = k_min_grade;
 		throw GradeTooLowException();
 	}
 }
