@@ -1,6 +1,8 @@
 #include "RobotomyRequestForm.hpp"
 #include <fstream>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm() : Form("unknown", k_init_sign_grade, k_init_exe_grade, "target")
 {
@@ -32,8 +34,9 @@ void RobotomyRequestForm::execute(const Bureaucrat &bc) const
 
 	std::cout << "Drilllllll...." << std::endl;
 
+	std::srand(std::time(NULL));
 	int rand = std::rand();
-	if (rand % 2)
+	if (rand % 2 == 0)
 	{
 		std::cout << this->getTarget() + " has been robotomized successfully" << std::endl;
 	}
