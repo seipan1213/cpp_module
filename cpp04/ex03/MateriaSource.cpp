@@ -10,6 +10,10 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource &other)
 {
+	for (size_t i = 0; i < MateriaSource::k_max_materias; i++)
+	{
+		materias[i] = NULL;
+	}
 	*this = other;
 }
 

@@ -65,6 +65,9 @@ int main()
 		you->use(3, *me);
 		you->use(4, *me);
 
+		MateriaSource a;
+		MateriaSource b(a);
+
 		delete hoge;
 		delete me;
 		delete you;

@@ -19,6 +19,10 @@ Character::Character(std::string name) : name(name)
 
 Character::Character(const Character &other)
 {
+	for (size_t i = 0; i < Character::k_max_materia; i++)
+	{
+		this->materias[i] = NULL;
+	}
 	*this = other;
 }
 

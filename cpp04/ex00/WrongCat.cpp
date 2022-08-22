@@ -9,7 +9,7 @@ WrongCat::WrongCat() : WrongAnimal(k_init_type)
 	std::cout << "[" + this->type + "] WrongCat constructor" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &other) : WrongAnimal()
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other.type)
 {
 	std::cout << "[" + this->type + "] WrongCat copy constructor" << std::endl;
 	*this = other;

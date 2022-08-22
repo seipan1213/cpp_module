@@ -9,7 +9,7 @@ Dog::Dog() : Animal(k_init_type), brain(new Brain())
 	std::cout << "[" + this->type + "] Dog constructor" << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(), brain(new Brain())
+Dog::Dog(const Dog &other) : Animal(other.type), brain(new Brain())
 {
 	std::cout << "[" + this->type + "] Dog copy constructor" << std::endl;
 	*this = other;
