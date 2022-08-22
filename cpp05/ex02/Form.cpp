@@ -97,7 +97,7 @@ void Form::guardGradeInRange(int grade) const
 
 void Form::guardExecute(const Bureaucrat &bc) const
 {
-	if (bc.getGrade() < exe_grade)
+	if (bc.getGrade() > exe_grade)
 	{
 		throw GradeTooLowException("grade too low to execute");
 	}
