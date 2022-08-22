@@ -121,7 +121,7 @@ Form::NotSignedException::NotSignedException(const std::string msg) : std::out_o
 
 std::ostream &operator<<(std::ostream &os, const Form &form)
 {
-	os << "Form:[ name: " + form.getName() + " sign_grade: " << form.getSignGrade()
+	os << "Form:[ name: " << form.getName() << " sign_grade: " << form.getSignGrade()
 	   << " exe_grade: " << form.getExeGrade() << " is_signed: " << form.getSignGrade() << " ]";
 	return os;
 }

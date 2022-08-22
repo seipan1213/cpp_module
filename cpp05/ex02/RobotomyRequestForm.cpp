@@ -38,10 +38,10 @@ void RobotomyRequestForm::execute(const Bureaucrat &bc) const
 	int rand = std::rand();
 	if (rand % 2 == 0)
 	{
-		std::cout << this->getTarget() + " has been robotomized successfully" << std::endl;
+		std::cout << this->getTarget() << " has been robotomized successfully" << std::endl;
 	}
 	else
 	{
-		std::cout << this->getTarget() + " has been robotomized unsuccessfully" << std::endl;
+		std::cout << this->getTarget() << " has been robotomized unsuccessfully" << std::endl;
 	}
 }

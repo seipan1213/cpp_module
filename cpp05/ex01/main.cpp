@@ -30,4 +30,28 @@ int main()
 			std::cout << e.what() << std::endl;
 		}
 	}
+	{
+		try
+		{
+			Form hogeForm("Hoge", 41, 42);
+			Bureaucrat user("hogaa", 42);
+			user.signForm(hogeForm);
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	}
+	{
+		try
+		{
+			Form hogeForm("Hoge", 43, 42);
+			Bureaucrat user("hogaa", 42);
+			user.signForm(hogeForm);
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	}
 }

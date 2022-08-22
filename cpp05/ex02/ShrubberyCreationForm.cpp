@@ -37,5 +37,5 @@ void ShrubberyCreationForm::execute(const Bureaucrat &bc) const
 	ofs << "    |-- hogeee" << std::endl;
 	ofs << "    |-- hogeeee" << std::endl;
 
-	std::cout << "ShrubberyCreationForm: " + this->getTarget() + " execute" << std::endl;
+	std::cout << "ShrubberyCreationForm: " << this->getTarget() << " execute" << std::endl;
 }
