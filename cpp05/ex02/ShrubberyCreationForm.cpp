@@ -30,7 +30,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &bc) const
 {
 	guardExecute(bc);
 	std::ofstream ofs;
-	ofs.open(this->getTarget() + "_shrubbery");
+	ofs.open((this->getTarget() + "_shrubbery").c_str());
 	ofs << "ShrubberyCreationForm" << std::endl;
 	ofs << "|-- hoge" << std::endl;
 	ofs << "`-- hogee" << std::endl;
