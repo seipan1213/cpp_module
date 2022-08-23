@@ -68,6 +68,9 @@ int main()
 		MateriaSource a;
 		MateriaSource b(a);
 
+		Character c;
+		Character d(c);
+
 		delete hoge;
 		delete me;
 		delete you;
