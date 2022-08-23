@@ -62,7 +62,7 @@ void Bureaucrat::increment(int i)
 	this->grade += i;
 }
 
-void Bureaucrat::guardGradeInRange(int grade)
+void Bureaucrat::guardGradeInRange(int grade) const
 {
 	if (grade < k_max_grade)
 	{

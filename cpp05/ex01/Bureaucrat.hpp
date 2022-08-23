@@ -30,7 +30,7 @@ public:
 	Bureaucrat operator--(int);
 
 	void increment(int i);
-	void guardGradeInRange(int grade);
+	void guardGradeInRange(int grade) const;
 
 	const std::string &getName() const;
 	int getGrade() const;

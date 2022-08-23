@@ -20,7 +20,6 @@ Form::Form(const Form &other)
 	  sign_grade(other.sign_grade),
 	  exe_grade(other.exe_grade)
 {
-	*this = other;
 }
 
 Form::~Form()
