@@ -20,6 +20,8 @@ Form::Form(const Form &other)
 	  sign_grade(other.sign_grade),
 	  exe_grade(other.exe_grade)
 {
+	guardGradeInRange(sign_grade);
+	guardGradeInRange(exe_grade);
 }
 
 Form::~Form()
@@ -68,7 +70,7 @@ void Form::beSigned(const Bureaucrat &bc)
 {
 	if (this->getSignGrade() < bc.getGrade())
 	{
-		throw GradeTooHighException("too low grade to sign");
+		throw GradeTooHighException("grade too low to sign");
 	}
 	if (this->is_signed)
 	{

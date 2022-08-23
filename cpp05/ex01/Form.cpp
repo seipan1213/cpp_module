@@ -20,6 +20,8 @@ Form::Form(const Form &other)
 	  sign_grade(other.sign_grade),
 	  exe_grade(other.exe_grade)
 {
+	guardGradeInRange(sign_grade);
+	guardGradeInRange(exe_grade);
 }
 
 Form::~Form()

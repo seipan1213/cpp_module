@@ -13,7 +13,7 @@ public:
 	ShrubberyCreationForm();
 	ShrubberyCreationForm(const std::string &name);
 	ShrubberyCreationForm(const ShrubberyCreationForm &other);
-	~ShrubberyCreationForm();
+	virtual ~ShrubberyCreationForm();
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
 
 	void execute(const Bureaucrat &bc) const;
