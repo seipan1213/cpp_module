@@ -6,7 +6,7 @@ Bureaucrat::Bureaucrat()
 {
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(const std::string &name, int grade)
 	: name(name), grade(grade)
 {
 	guardGradeInRange(grade);
@@ -25,6 +25,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
 	if (this != &other)
 	{
+		guardGradeInRange(other.grade);
 		this->grade = other.grade;
 	}
 	return *this;

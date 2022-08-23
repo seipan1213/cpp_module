@@ -25,6 +25,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
 	if (this != &other)
 	{
+		guardGradeInRange(other.grade);
 		this->grade = other.grade;
 	}
 	return *this;

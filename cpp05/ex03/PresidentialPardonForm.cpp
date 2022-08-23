@@ -31,8 +31,8 @@ const std::string PresidentialPardonForm::getInitName()
 	return "presidential pardon";
 }
 
-void PresidentialPardonForm::execute(const Bureaucrat &bc) const
+void PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
-	guardExecute(bc);
+	guardExecute(executor);
 	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

@@ -33,9 +33,9 @@ const std::string RobotomyRequestForm::getInitName()
 	return "robotomy request";
 }
 
-void RobotomyRequestForm::execute(const Bureaucrat &bc) const
+void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
-	guardExecute(bc);
+	guardExecute(executor);
 
 	std::cout << "Drilllllll...." << std::endl;
 

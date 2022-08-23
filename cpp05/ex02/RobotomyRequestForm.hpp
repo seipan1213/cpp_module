@@ -17,7 +17,7 @@ public:
 	RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
 
 	static const std::string getInitName();
-	void execute(const Bureaucrat &bc) const;
+	void execute(const Bureaucrat &executor) const;
 };
 
 #endif

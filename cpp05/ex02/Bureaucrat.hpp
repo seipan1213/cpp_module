@@ -12,14 +12,14 @@ class Form;
 class Bureaucrat
 {
 private:
-	std::string name;
+	const std::string name;
 	int grade;
 	static const int k_max_grade = 1;
 	static const int k_min_grade = 150;
 
 public:
 	Bureaucrat();
-	Bureaucrat(std::string name, int grade);
+	Bureaucrat(const std::string &name, int grade);
 	Bureaucrat(const Bureaucrat &other);
 	Bureaucrat &operator=(const Bureaucrat &other);
 	virtual ~Bureaucrat();
@@ -36,7 +36,7 @@ public:
 	int getGrade() const;
 
 	void signForm(Form &form);
-	void executeForm(const Form &form);
+	void executeForm(Form const &form);
 
 	class GradeTooHighException : public std::out_of_range
 	{

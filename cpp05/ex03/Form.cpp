@@ -32,11 +32,7 @@ Form &Form::operator=(const Form &other)
 {
 	if (this != &other)
 	{
-		guardGradeInRange(other.sign_grade);
-		guardGradeInRange(other.exe_grade);
 		this->is_signed = other.is_signed;
-		this->sign_grade = other.sign_grade;
-		this->exe_grade = other.exe_grade;
 	}
 	return *this;
 }
@@ -80,9 +76,9 @@ void Form::beSigned(const Bureaucrat &bc)
 	this->is_signed = true;
 }
 
-void Form::execute(const Bureaucrat &bc) const
+void Form::execute(const Bureaucrat &executor) const
 {
-	std::cout << bc << ": No Action" << std::endl;
+	std::cout << executor << ": No Action" << std::endl;
 }
 
 void Form::guardGradeInRange(int grade) const
@@ -97,9 +93,9 @@ void Form::guardGradeInRange(int grade) const
 	}
 }
 
-void Form::guardExecute(const Bureaucrat &bc) const
+void Form::guardExecute(const Bureaucrat &executor) const
 {
-	if (bc.getGrade() > exe_grade)
+	if (executor.getGrade() > exe_grade)
 	{
 		throw GradeTooLowException("grade too low to execute");
 	}

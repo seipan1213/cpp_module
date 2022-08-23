@@ -14,8 +14,8 @@ class Form
 private:
 	const std::string name;
 	bool is_signed;
-	int sign_grade;
-	int exe_grade;
+	const int sign_grade;
+	const int exe_grade;
 
 	static const int k_max_grade = 1;
 	static const int k_min_grade = 150;

@@ -36,7 +36,7 @@ Form *Intern::makeForm(const std::string &form_name, const std::string &target)
 
 	for (form_index = 0; form_index < this->k_form_length + 1; form_index++)
 	{
-		if (form_index <= this->k_form_length && form_list[form_index] == form_name)
+		if (form_index < this->k_form_length && form_list[form_index] == form_name)
 			break;
 	}
 

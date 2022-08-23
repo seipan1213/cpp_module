@@ -14,8 +14,8 @@ class Form
 private:
 	const std::string name;
 	bool is_signed;
-	int sign_grade;
-	int exe_grade;
+	const int sign_grade;
+	const int exe_grade;
 	const std::string target;
 
 	static const int k_max_grade = 1;
@@ -35,7 +35,7 @@ public:
 	const std::string &getTarget() const;
 
 	virtual void beSigned(const Bureaucrat &bc);
-	virtual void execute(const Bureaucrat &bc) const = 0;
+	virtual void execute(const Bureaucrat &executor) const = 0;
 
 	void guardGradeInRange(int grade) const;
 	void guardExecute(const Bureaucrat &bc) const;

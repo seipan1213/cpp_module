@@ -32,11 +32,7 @@ Form &Form::operator=(const Form &other)
 {
 	if (this != &other)
 	{
-		guardGradeInRange(other.sign_grade);
-		guardGradeInRange(other.exe_grade);
 		this->is_signed = other.is_signed;
-		this->sign_grade = other.sign_grade;
-		this->exe_grade = other.exe_grade;
 	}
 	return *this;
 }

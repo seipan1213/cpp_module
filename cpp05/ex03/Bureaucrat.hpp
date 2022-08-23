@@ -36,7 +36,7 @@ public:
 	int getGrade() const;
 
 	void signForm(Form &form);
-	void executeForm(const Form &form);
+	void executeForm(Form const &form);
 
 	class GradeTooHighException : public std::out_of_range
 	{
