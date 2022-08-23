@@ -35,7 +35,9 @@ int main()
 		c_cat.showIdeas();
 		std::cout << std::endl;
 
-		delete animals[0];
-		delete animals[1];
+		for (int i = 0; i < 2; i++)
+		{
+			delete animals[i];
+		}
 	}
 }
