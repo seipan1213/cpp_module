@@ -4,12 +4,12 @@
 #include <cstdlib>
 #include <ctime>
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("unknown", k_init_sign_grade, k_init_exe_grade, "target")
+RobotomyRequestForm::RobotomyRequestForm() : Form(this->getInitName(), k_init_sign_grade, k_init_exe_grade, "target")
 {
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
-	: Form("RobotomyRequestForm", k_init_sign_grade, k_init_exe_grade, target)
+	: Form(this->getInitName(), k_init_sign_grade, k_init_exe_grade, target)
 {
 }
 
@@ -26,6 +26,11 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 {
 	Form::operator=(other);
 	return *this;
+}
+
+const std::string RobotomyRequestForm::getInitName()
+{
+	return "robotomy request";
 }
 
 void RobotomyRequestForm::execute(const Bureaucrat &bc) const

@@ -2,12 +2,12 @@
 #include <fstream>
 #include <iostream>
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("unknown", k_init_sign_grade, k_init_exe_grade, "target")
+ShrubberyCreationForm::ShrubberyCreationForm() : Form(this->getInitName(), k_init_sign_grade, k_init_exe_grade, "target")
 {
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
-	: Form("ShrubberyCreationForm", k_init_sign_grade, k_init_exe_grade, target)
+	: Form(this->getInitName(), k_init_sign_grade, k_init_exe_grade, target)
 {
 }
 
@@ -24,6 +24,11 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 {
 	Form::operator=(other);
 	return *this;
+}
+
+const std::string ShrubberyCreationForm::getInitName()
+{
+	return "shrubbery creation";
 }
 
 void ShrubberyCreationForm::execute(const Bureaucrat &bc) const
