@@ -94,6 +94,6 @@ Form::GradeTooLowException::GradeTooLowException(const std::string msg) : std::o
 std::ostream &operator<<(std::ostream &os, const Form &form)
 {
 	os << "Form:[ name: " << form.getName() << " sign_grade: " << form.getSignGrade()
-	   << " exe_grade: " << form.getExeGrade() << " is_signed: " << form.getSignGrade() << " ]";
+	   << " exe_grade: " << form.getExeGrade() << " is_signed: " << form.isSigned() << " ]";
 	return os;
 }

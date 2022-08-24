@@ -26,7 +26,7 @@ int main()
 		try
 		{
 			ShrubberyCreationForm hogeForm("HOGE TARGET");
-			Bureaucrat user("hogaa", 145);
+			Bureaucrat user("hogaa", 137);
 			user.signForm(hogeForm);
 			user.executeForm(hogeForm);
 		}
