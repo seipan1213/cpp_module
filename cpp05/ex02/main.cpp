@@ -80,6 +80,20 @@ int main()
 		try
 		{
 			PresidentialPardonForm hogeForm("HOGE TARGET");
+			Bureaucrat user("hogaa", 6);
+			user.signForm(hogeForm);
+			user.executeForm(hogeForm);
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+		std::cout << std::endl;
+	}
+	{
+		try
+		{
+			PresidentialPardonForm hogeForm("HOGE TARGET");
 			Bureaucrat user("hogaa", 5);
 			user.signForm(hogeForm);
 			user.executeForm(hogeForm);
