@@ -1,9 +1,15 @@
 #include "Convert.hpp"
 #include <iostream>
 #include <cstdlib>
+#include <iomanip>
+#include <climits>
+#include <limits>
+#include <cerrno>
 
 Convert::Convert(const std::string &str) : str(str)
 {
+	char *p = NULL;
+	d_value = std::strtod(str.c_str(), &p);
 }
 
 Convert::~Convert()
@@ -20,62 +26,61 @@ Convert &Convert::operator=(const Convert &other)
 	if (this == &other)
 	{
 		this->str = other.str;
+		this->d_value = other.d_value;
 	}
 
 	return (*this);
 }
 
-int Convert::toInt() const
+void Convert::showInt() const
 {
-	char *p = NULL;
-	int res = std::strtol(this->str.c_str(), &p, 10);
+	std::cout << "int: ";
 
-	if (*p)
+	if (this->d_value < (double)INT_MIN || this->d_value > (double)INT_MAX)
 	{
-		std::cerr << "toInt: can't convert (string =" << this->str << ")" << std::endl;
-		return 0;
+		std::cout << "impossible" << std::endl;
 	}
-
-	return res;
+	else
+	{
+		std::cout << static_cast<int>(this->d_value) << std::endl;
+	}
 }
 
-float Convert::toFloat() const
+void Convert::showFloat() const
 {
-	char *p = NULL;
-	float res = std::strtof(this->str.c_str(), &p);
+	std::cout << "float: ";
 
-	if (*p)
+	float f = static_cast<float>(this->d_value);
+	if (f != std::numeric_limits<float>::infinity() && f != -std::numeric_limits<float>::infinity())
+		std::cout << "impossible" << std::endl;
+	else
 	{
-		std::cerr << "toFloat: can't convert (string =" << this->str << ")" << std::endl;
-		return 0;
+		std::cout << std::fixed << std::setprecision(1) << f << "f" << std::endl;
 	}
-
-	return res;
 }
 
-double Convert::toDouble() const
+void Convert::showDouble() const
 {
-	char *p = NULL;
-	float res = std::strtod(this->str.c_str(), &p);
-
-	if (*p)
-	{
-		std::cerr << "toDouble: can't convert (string =" << this->str << ")" << std::endl;
-		return 0;
-	}
-
-	return res;
+	std::cout << "double: ";
+	std::cout << std::fixed << std::setprecision(1) << this->d_value << std::endl;
 }
 
-char Convert::toChar() const
+void Convert::showChar() const
 {
-	char res = *(this->str.c_str());
+	std::cout << "char: ";
 
-	if (!res)
-	{
-		std::cerr << "toChar: can't convert (string =" << this->str << ")" << std::endl;
-		return 0;
-	}
+	if (this->d_value < (double)CHAR_MIN || (double)CHAR_MAX < this->d_value)
+		std::cout << "impossible" << std::endl;
+	else if (!std::isprint(this->d_value))
+		std::cout << "Non displayable" << std::endl;
+	else
+		std::cout << "'" << static_cast<char>(this->d_value) << "'" << std::endl;
+}
 
-	return res;
+void Convert::showConvert() const
+{
+	this->showChar();
+	this->showInt();
+	this->showFloat();
+	this->showDouble();
 }
