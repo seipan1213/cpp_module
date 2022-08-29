@@ -7,7 +7,12 @@ class Convert
 {
 private:
 	std::string str;
-	double d_value;
+
+	bool getDValue(double &d_value) const;
+	size_t getNDigits() const;
+	bool isNan(std::string str) const;
+	bool isPseudoLiteral(std::string str) const;
+	bool isSignedDigit(std::string str) const;
 
 public:
 	Convert(const std::string &str);
