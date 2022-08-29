@@ -29,12 +29,12 @@ Convert &Convert::operator=(const Convert &other)
 	return (*this);
 }
 
-bool Convert::isNan(std::string str)const
+bool Convert::isNan(std::string str) const
 {
 	return (str == "nan" || str == "nanf");
 }
 
-bool Convert::isPseudoLiteral(std::string str)const
+bool Convert::isPseudoLiteral(std::string str) const
 {
 	return (isNan(str) || str == "+inf" || str == "+inff" || str == "-inf" || str == "-inff");
 }
