@@ -13,11 +13,11 @@ private:
 	T *array;
 
 public:
-	Array() : len(0), array(new T[0]) {}
+	Array() : len(0), array(new T[0]()) {}
 
-	Array(unsigned int len) : len(len), array(new T[len]) {}
+	Array(unsigned int len) : len(len), array(new T[len]()) {}
 
-	Array(const Array &other) : len(other.len), array(new T[other.len])
+	Array(const Array &other) : len(other.len), array(new T[other.len]())
 	{
 		for (size_t i = 0; i < other.len; i++)
 		{
@@ -35,7 +35,7 @@ public:
 		if (this != &other)
 		{
 			delete[] array;
-			this->array = new T[other.len];
+			this->array = new T[other.len]();
 			for (size_t i = 0; i < other.len; i++)
 			{
 				this->array[i] = other.array[i];
