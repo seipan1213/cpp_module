@@ -24,7 +24,7 @@ void inc(std::string &str)
 int main()
 {
 	{
-		int n = 5;
+		const int n = 5;
 		int array[n] = {0, 1, 2, 3, 4};
 		iter(array, n, print);
 		std::cout << std::endl;
@@ -35,7 +35,7 @@ int main()
 		std::cout << std::endl;
 	}
 	{
-		int n = 5;
+		const int n = 5;
 		std::string array[n] = {"hoga", "hogb", "hogc", "hogd", "hoge"};
 		iter(array, n, print);
 		std::cout << std::endl;
