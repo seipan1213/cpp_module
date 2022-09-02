@@ -1,6 +1,16 @@
 #include "iter.hpp"
 #include <iostream>
 
+void put_i(int i)
+{
+	std::cout << i + 100 << std::endl;
+}
+
+void put_str(std::string str)
+{
+	std::cout << str + "_XX" << std::endl;
+}
+
 void inc(int &i)
 {
 	i++;
@@ -21,6 +31,8 @@ int main()
 		iter(array, n, inc);
 		iter(array, n, print);
 		std::cout << std::endl;
+		iter(array, n, put_i);
+		std::cout << std::endl;
 	}
 	{
 		int n = 5;
@@ -29,6 +41,8 @@ int main()
 		std::cout << std::endl;
 		iter(array, n, inc);
 		iter(array, n, print);
+		std::cout << std::endl;
+		iter(array, n, put_str);
 		std::cout << std::endl;
 	}
 }
