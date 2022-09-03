@@ -1,0 +1,23 @@
+NAME		=	test
+CXX			=	c++
+CXXFLAGS	=	-Wall -Wextra -Werror  -MMD -MP
+SRCS		=	main.cpp Span.cpp
+OBJS		=	$(SRCS:.cpp=.o)
+DEPS		=	$(OBJS:.o=.d)
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+
+clean:
+	$(RM) $(OBJS) $(DEPS)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
+
+-include $(DEPS)
+
+.PHONY: all fclean clean re
