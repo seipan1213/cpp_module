@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include <algorithm>
 #include <limits>
+#include <ctime>
 
 Span::Span(unsigned int max_len) : max_len(max_len)
 {
@@ -34,6 +35,15 @@ void Span::addNumber(int number)
 		throw std::out_of_range("out of range");
 	}
 	this->numbers.push_back(number);
+}
+
+void Span::addRandomNumber(unsigned int amount)
+{
+	srand(std::time(NULL));
+	for (unsigned int i = 0; i < amount; i++)
+	{
+		this->addNumber(rand());
+	}
 }
 
 unsigned int Span::shortestSpan()

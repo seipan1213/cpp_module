@@ -17,6 +17,8 @@ public:
 	const Span &operator=(const Span &rhs);
 
 	void addNumber(int number);
+	void addRandomNumber(unsigned int amount);
+
 	unsigned int shortestSpan();
 	unsigned int longestSpan();
 };
