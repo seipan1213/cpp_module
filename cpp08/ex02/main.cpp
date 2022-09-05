@@ -66,8 +66,8 @@ int main()
 
 		MutantStack<int> hoge;
 		hoge = mstack;
-		MutantStack<int>::iterator it = mstack.begin();
-		MutantStack<int>::iterator ite = mstack.end();
+		MutantStack<int>::iterator it = hoge.begin();
+		MutantStack<int>::iterator ite = hoge.end();
 		++it;
 		--it;
 		while (it != ite)
@@ -84,8 +84,8 @@ int main()
 		mstack.push(42);
 
 		MutantStack<int> hoge(mstack);
-		MutantStack<int>::iterator it = mstack.begin();
-		MutantStack<int>::iterator ite = mstack.end();
+		MutantStack<int>::iterator it = hoge.begin();
+		MutantStack<int>::iterator ite = hoge.end();
 		++it;
 		--it;
 		while (it != ite)
