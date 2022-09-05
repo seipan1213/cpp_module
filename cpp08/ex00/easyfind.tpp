@@ -9,7 +9,7 @@ typename T::iterator easyfind(T &container, int num)
 	typename T::iterator it = std::find(container.begin(), container.end(), num);
 	if (it == container.end())
 	{
-		throw std::logic_error("The number is not found.");
+		throw std::logic_error("cant find the number");
 	}
 	return (it);
 }
