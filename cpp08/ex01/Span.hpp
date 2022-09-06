@@ -17,7 +17,7 @@ public:
 	const Span &operator=(const Span &rhs);
 
 	void addNumber(int number);
-	void addRandomNumber(unsigned int amount);
+	void addRandomNumbers(unsigned int amount);
 
 	template <typename T>
 	void addNumberWithIterator(T begin, T end)

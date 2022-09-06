@@ -52,7 +52,7 @@ int main()
 		Span sp = Span(10001);
 
 		sp.addNumber(-10000);
-		sp.addRandomNumber(10000);
+		sp.addRandomNumbers(10000);
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 		std::cout << std::endl;

@@ -35,7 +35,7 @@ void Span::addNumber(int number)
 	this->numbers.push_back(number);
 }
 
-void Span::addRandomNumber(unsigned int amount)
+void Span::addRandomNumbers(unsigned int amount)
 {
 	for (unsigned int i = 0; i < amount; i++)
 	{
