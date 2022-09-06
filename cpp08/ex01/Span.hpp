@@ -19,6 +19,16 @@ public:
 	void addNumber(int number);
 	void addRandomNumber(unsigned int amount);
 
+	template <typename T>
+	void addNumberWithIterator(T begin, T end)
+	{
+		while (begin != end)
+		{
+			begin++;
+			this->addNumber(*begin);
+		}
+	}
+
 	unsigned int shortestSpan();
 	unsigned int longestSpan();
 };

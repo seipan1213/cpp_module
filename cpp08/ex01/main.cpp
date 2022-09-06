@@ -1,8 +1,24 @@
 #include "Span.hpp"
 #include <iostream>
+#include <vector>
+#include <algorithm>
+#include <ctime>
 
 int main()
 {
+	{
+		srand(time(NULL));
+		std::vector<int> v;
+		for (int i = 0; i < 10000; i++)
+		{
+			v.push_back(rand());
+		}
+		Span sp = Span(10000);
+		sp.addNumberWithIterator(v.begin(), v.end());
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+		std::cout << std::endl;
+	}
 	{
 		Span sp = Span(2);
 		sp.addNumber(2147483647);
