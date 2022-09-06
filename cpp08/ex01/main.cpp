@@ -4,6 +4,14 @@
 int main()
 {
 	{
+		Span sp = Span(2);
+		sp.addNumber(2147483647);
+		sp.addNumber(-2147483648);
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+		std::cout << std::endl;
+	}
+	{
 		Span sp = Span(5);
 		sp.addNumber(6);
 		sp.addNumber(3);

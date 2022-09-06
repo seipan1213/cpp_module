@@ -58,7 +58,7 @@ unsigned int Span::shortestSpan()
 
 	for (unsigned int i = 0; i < this->numbers.size() - 1; i++)
 	{
-		unsigned int diff = std::abs(this->numbers[i] - this->numbers[i + 1]);
+		unsigned int diff = this->numbers[i + 1] - this->numbers[i];
 		min_diff = std::min(diff, min_diff);
 	}
 	return min_diff;
@@ -72,6 +72,6 @@ unsigned int Span::longestSpan()
 	}
 
 	std::sort(this->numbers.begin(), this->numbers.end());
-	unsigned int max_diff = std::abs(this->numbers[this->numbers.size() - 1] - this->numbers[0]);
+	unsigned int max_diff = this->numbers[this->numbers.size() - 1] - this->numbers[0];
 	return max_diff;
 }
